@@ -4,7 +4,7 @@ author: Terry Yu
 
 brief: collect log from rdk-b based system
 
-
+github: https://github.com/TUNGHUAYU/rdkb-log-extractor
 
 [toc]
 
