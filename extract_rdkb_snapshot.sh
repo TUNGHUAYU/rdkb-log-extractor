@@ -34,12 +34,15 @@ mkdir -p ${dst_dir_path}
 bash get_DataModel.sh "${condition}"
 bash get_rdklogs.sh "${condition}"
 
-cd ${dst_dir_path%/*}
+cd ${dst_dir_path%/*
+cp "/version.txt" "${condition}"
 tar czvf "${condition}_snapshot.tar.gz" "${condition}"
 
 # tftp push
 tftp_push ${condition}_snapshot.tar.gz
 
-# 
+# go back old pwd
 echo "move back ${OLDPWD}"
 cd ${OLDPWD}
+
+
