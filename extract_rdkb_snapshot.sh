@@ -36,6 +36,15 @@ bash get_rdklogs.sh "${condition}"
 
 cd ${dst_dir_path%/*}
 cp "/version.txt" "${condition}"
+
+cd ${condition}
+cp "/data/rdkb_nvram/dnsmasq.leases" "dnsmasq.leases"
+ip neighbour show > "ip_neighbour_show.txt"
+iw dev wl0 station dump > "dev_wl0_station_dump.txt"
+iw dev wl1 station dump > "dev_wl1_station_dump.txt"
+arp > "arp.txt"
+
+# compress the files to zip
 tar czvf "${condition}_snapshot.tar.gz" "${condition}"
 
 # tftp push
