@@ -38,7 +38,7 @@ cd ${dst_dir_path%/*}
 cp "/version.txt" "${condition}"
 
 cd ${condition}
-cp "/data/rdkb_nvram/dnsmasq.leases" "dnsmasq.leases"
+cp "/nvram/dnsmasq.leases" "dnsmasq.leases"
 ip neighbour show > "ip_neighbour_show.txt"
 iw dev wl0 station dump > "dev_wl0_station_dump.txt"
 iw dev wl1 station dump > "dev_wl1_station_dump.txt"
