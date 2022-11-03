@@ -45,6 +45,7 @@ iw dev wl1 station dump > "dev_wl1_station_dump.txt"
 arp > "arp.txt"
 
 # compress the files to zip
+cd ..
 tar czvf "${condition}_snapshot.tar.gz" "${condition}"
 
 # tftp push
